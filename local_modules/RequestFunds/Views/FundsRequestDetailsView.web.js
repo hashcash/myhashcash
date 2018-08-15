@@ -355,7 +355,7 @@ class FundsRequestDetailsView extends View
 		var value = "" // must use \r\n instead of \n for Windows
 		let ccy = self.fundsRequest.amountCcySymbol || "XMR"
 		{
-			value += "Someone has requested a Monero payment"
+			value += "Someone has requested a Hashcash payment"
 			if (self.fundsRequest.amount) {
 				value += ` of ${self.fundsRequest.amount} ${ccy}`
 			}
@@ -371,9 +371,9 @@ class FundsRequestDetailsView extends View
 		}
 		value += "\r\n" // spacer
 		value += "\r\n---------------------------"
-		value += `\r\nIf you have MyMonero installed, use this link to send the funds: ${self.fundsRequest.Lazy_URI__addressAsAuthority()}`
+		value += `\r\nIf you have MyHashcash installed, use this link to send the funds: ${self.fundsRequest.Lazy_URI__addressAsAuthority()}`
 		value += `\r\n`
-		value += `\r\nIf you don't have MyMonero installed, download it from ${"https://" + self.context.appDownloadLink_domainAndPath}`
+		value += `\r\nIf you don't have MyHashcash installed, download it from ${"https://" + self.context.appDownloadLink_domainAndPath}`
 		//
 		return value
 	}
@@ -385,7 +385,7 @@ class FundsRequestDetailsView extends View
 		let ccy = self.fundsRequest.amountCcySymbol || "XMR"
 		value += "<p>"
 		{
-			value += "Someone has requested a Monero payment"
+			value += "Someone has requested a Hashcash payment"
 			if (self.fundsRequest.amount) {
 				value += ` of <strong>${self.fundsRequest.amount} ${ccy}</strong>`
 			}
@@ -399,9 +399,9 @@ class FundsRequestDetailsView extends View
 			value += `<p>Description: "${self.fundsRequest.description}"</p>`
 		}
 		value += "<p>---------------------------</p>"
-		value += `<p>If you have MyMonero installed, <a href="${self.fundsRequest.Lazy_URI__addressAsAuthority()}">press this link to send the funds</a>.</p>`
+		value += `<p>If you have MyHashcash installed, <a href="${self.fundsRequest.Lazy_URI__addressAsAuthority()}">press this link to send the funds</a>.</p>`
 		const appDownloadLink_domainAndPath = self.context.appDownloadLink_domainAndPath
-		value += `<p>If you don't have MyMonero installed, download it from <a href="https://${appDownloadLink_domainAndPath}">${appDownloadLink_domainAndPath}</a>.</p>`
+		value += `<p>If you don't have MyHashcash installed, download it from <a href="https://${appDownloadLink_domainAndPath}">${appDownloadLink_domainAndPath}</a>.</p>`
 		//
 		return value
 	}

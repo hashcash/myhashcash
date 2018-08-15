@@ -328,7 +328,7 @@ class SendFundsView extends View
 			breakingDiv.appendChild(layer)
 		}
 		{
-			const tooltipText = "Based on Monero network<br/>fee estimate (not final).<br/><br/>MyMonero does not charge<br/>a transfer service fee."
+			const tooltipText = "Based on Hashcash network<br/>fee estimate (not final).<br/><br/>MyHashcash does not charge<br/>a transfer service fee."
 			const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
 			const layer = view.layer
 			breakingDiv.appendChild(layer)
@@ -353,7 +353,7 @@ class SendFundsView extends View
 		const labelLayer = commonComponents_forms.New_fieldTitle_labelLayer("TO", self.context)
 		labelLayer.style.marginTop = "17px" // to square with MEMO field on Send Funds
 		{
-			const tooltipText = `Drag &amp; drop QR codes<br/>to auto-fill.<br/><br/>Please double-check<br/>your recipient info as<br/>Monero transfers are<br/>not yet&nbsp;reversible.`
+			const tooltipText = `Drag &amp; drop QR codes<br/>to auto-fill.<br/><br/>Please double-check<br/>your recipient info as<br/>Hashcash transfers are<br/>not yet&nbsp;reversible.`
 			const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
 			const layer = view.layer
 			labelLayer.appendChild(layer) // we can append straight to labelLayer as we don't ever change its innerHTML
@@ -391,7 +391,7 @@ class SendFundsView extends View
 			div.appendChild(fieldContainerLayer)
 			fieldContainerLayer.style.display = "none" // initial state
 			{
-				const labelLayer = commonComponents_forms.New_fieldTitle_labelLayer("MONERO ADDRESS", self.context)
+				const labelLayer = commonComponents_forms.New_fieldTitle_labelLayer("HASHCASH ADDRESS", self.context)
 				labelLayer.style.marginTop = "6px" // instead of 15
 				fieldContainerLayer.appendChild(labelLayer)
 				//
@@ -487,7 +487,7 @@ class SendFundsView extends View
 			const labelLayer = commonComponents_forms.New_fieldTitle_labelLayer("PRIORITY", self.context)
 			labelLayer.style.marginTop = "4px"
 			{
-				const tooltipText = `You can pay the Monero<br/>network a higher fee to<br/>have your transfers<br/>confirmed faster.`
+				const tooltipText = `You can pay the Hashcash<br/>network a higher fee to<br/>have your transfers<br/>confirmed faster.`
 				const view = commonComponents_tooltips.New_TooltipSpawningButtonView(tooltipText, self.context)
 				const layer = view.layer
 				labelLayer.appendChild(layer) // we can append straight to labelLayer as we don't ever change its innerHTML
@@ -688,7 +688,7 @@ class SendFundsView extends View
 			div.style.fontWeight = "300"
 			div.style.webkitFontSmoothing = "subpixel-antialiased"
 			//
-			div.innerHTML = "Drag and drop a<br/>Monero Request Code "
+			div.innerHTML = "Drag and drop a<br/>Hashcash Request Code "
 			self.qrCodeInputs_contentView.layer.appendChild(div)
 		}
 		self.addSubview(view)
@@ -934,8 +934,8 @@ class SendFundsView extends View
 	{
 		const self = this
 		const estimatedNetworkFee_JSBigInt = monero_sendingFunds_utils.EstimatedTransaction_networkFee(
-			monero_sendingFunds_utils.fixedMixin(),
-			new JSBigInt("187000000"), // TODO: grab this from polling request for dynamic per kb fee
+      monero_sendingFunds_utils.fixedMixin(),
+      new JSBigInt("8"), // TODO: grab this from polling request for dynamic per kb fee
 			self._selected_simplePriority()
 		)
 		const estimatedTotalFee_JSBigInt = estimatedNetworkFee_JSBigInt // no tx hosting service fee
@@ -2149,16 +2149,16 @@ class SendFundsView extends View
 				//
 				const code = jsQR(imageData.data, imageData.width, imageData.height)
 				if (!code || !code.location) {
-					self.validationMessageLayer.SetValidationError("MyMonero was unable to find a QR code in that image.")
+					self.validationMessageLayer.SetValidationError("MyHashcash was unable to find a QR code in that image.")
 					return
 				}
 				const stringData = code.data
 				if (!stringData) {
-					self.validationMessageLayer.SetValidationError("MyMonero was unable to decode a QR code from that image.")
+					self.validationMessageLayer.SetValidationError("MyHashcash was unable to decode a QR code from that image.")
 					return
 				}
 				if (typeof stringData !== 'string') {
-					self.validationMessageLayer.SetValidationError("MyMonero was able to decode QR code but got unrecognized result.")
+					self.validationMessageLayer.SetValidationError("MyHashcash was able to decode QR code but got unrecognized result.")
 					return
 				}
 				const possibleURIString = stringData

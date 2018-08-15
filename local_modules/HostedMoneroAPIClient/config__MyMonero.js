@@ -1,7 +1,7 @@
 module.exports = 
 {
-	API__authority: "api.mymonero.com:8443",
+	API__authority: "api.my.v2.hashcash.io",
 	//
-	HostingServiceFee_depositAddress: "49VNLa9K5ecJo13bwKYt5HCmA8GkgLwpyFjgGKG6qmp8dqoXww8TKPU2PJaLfAAtoZGgtHfJ1nYY8G2YaewycB4f72yFT6u",
-	HostingServiceFee_txFeeRatioOfNetworkFee: 0.5, // Service fee relative to tx fee (0.5 => 50%)
+	HostingServiceFee_depositAddress: "hxNHsnxLgtJ1v5e2GU1PZUJJcqn3qk3JfQV68t4F5F5y7T1fQH39HaZXcNx3JaETcXWuyLLiFYmgvdunju7o3LSS4fPRE2oszP",
+	HostingServiceFee_txFeeRatioOfNetworkFee: 0, // Service fee relative to tx fee (0.5 => 50%)
 }

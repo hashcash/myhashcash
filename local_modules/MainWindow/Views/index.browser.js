@@ -41,7 +41,7 @@ window.BootApp = function()
 		},
 		getName: function() 
 		{ 
-			return "MyMonero"
+			return "MyHashcash"
 		},
 		getDeviceManufacturer: function() { 
 			throw 'app.getDeviceManufacturer(): Unsupported platform'

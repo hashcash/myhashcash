@@ -72,7 +72,7 @@ function HardenRuntime()
 	// disable eval
 	window.eval = global.eval = function()
 	{
-		throw new Error("MyMonero does not support window.eval() for security reasons.")
+		throw new Error("MyHashcash does not support window.eval() for security reasons.")
 	}
 }
 exports.HardenRuntime = HardenRuntime

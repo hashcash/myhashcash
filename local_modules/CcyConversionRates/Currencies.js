@@ -32,7 +32,7 @@ let monero_config = require('../mymonero_core_js/monero_utils/monero_config')
 //
 let ccySymbolsByCcy = exports.ccySymbolsByCcy = 
 {
-	XMR: "XMR", // included for completeness / convenience / API
+	XMR: monero_config.coinSymbol, // included for completeness / convenience / API
 	USD: "USD",
 	AUD: "AUD",
 	BRL: "BRL",

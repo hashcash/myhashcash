@@ -1,10 +1,10 @@
 {
-  "name": "MyMonero",
-  "author": "MyMonero",
-  "description": "The simplest way to use Monero",
+  "name": "MyHashcash",
+  "author": "MyHashcash",
+  "description": "The simplest way to use Hashcash",
   "version": "1.0.0",
   "license": "SEE LICENSE IN LICENSE.txt",
-  "repository": "https://github.com/mymonero/mymonero-app-js",
+  "repository": "https://github.com/hashcash/myhashcash",
   "private": false,
   "main": "./local_modules/electron_main/electron_main.js",
   "scripts": {
